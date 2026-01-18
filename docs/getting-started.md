@@ -32,10 +32,35 @@ Before you begin, ensure you have:
 
 ## Installation
 
+### Option 1: NPM (Recommended)
+
+The easiest way to install - no manual setup required:
+
+```bash
+# Use directly with npx (no installation needed)
+npx lightspeed-xseries-mcp
+
+# Or install globally
+npm install -g lightspeed-xseries-mcp
+```
+
+### Option 2: Smithery
+
+Install with one click from [Smithery](https://smithery.ai):
+
+1. Go to [smithery.ai](https://smithery.ai)
+2. Search for **"lightspeed-xseries-mcp"**
+3. Click **"Install"** and follow the prompts
+4. Smithery will automatically configure your AI tool
+
+### Option 3: From Source
+
+For development or customization:
+
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/lightspeed-mcp-server.git
-cd lightspeed-mcp-server
+git clone https://github.com/lightspeed-skhattane/lightspeed-xseries-mcp.git
+cd lightspeed-xseries-mcp
 
 # Install dependencies
 npm install
@@ -87,12 +112,31 @@ Claude Desktop supports MCP servers natively through a configuration file.
 3. Click **Edit Config**
 4. Add the following configuration:
 
+**Using NPM (Recommended):**
+
+```json
+{
+  "mcpServers": {
+    "lightspeed": {
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
+      "env": {
+        "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
+        "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
+      }
+    }
+  }
+}
+```
+
+**Using local build (from source):**
+
 ```json
 {
   "mcpServers": {
     "lightspeed": {
       "command": "node",
-      "args": ["/absolute/path/to/lightspeed-mcp-server/dist/index.js"],
+      "args": ["/absolute/path/to/lightspeed-xseries-mcp/dist/index.js"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
         "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
@@ -104,6 +148,10 @@ Claude Desktop supports MCP servers natively through a configuration file.
 
 5. Save the file and **restart Claude Desktop completely**
 6. Look for the **hammer/tools icon** in the bottom-right corner to confirm the server is connected
+
+**Alternative: Smithery**
+
+You can also install via [Smithery](https://smithery.ai) for automatic configuration.
 
 **Alternative: Desktop Extensions (.mcpb)**
 
@@ -117,13 +165,11 @@ Claude Desktop also supports one-click installation via `.mcpb` bundles. Check t
 
 Claude Code can configure MCP servers via CLI commands or configuration files.
 
-**Method 1: CLI Command**
+**Method 1: CLI Command (Recommended)**
 
 ```bash
 # Add the server globally (available in all projects)
-claude mcp add lightspeed \
-  --scope user \
-  -- node /absolute/path/to/lightspeed-mcp-server/dist/index.js
+claude mcp add lightspeed --scope user -- npx -y lightspeed-xseries-mcp
 
 # Set environment variables
 export LIGHTSPEED_DOMAIN_PREFIX="your-store"
@@ -138,8 +184,8 @@ Edit `~/.claude.json` and add:
 {
   "mcpServers": {
     "lightspeed": {
-      "command": "node",
-      "args": ["/absolute/path/to/lightspeed-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
         "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
@@ -157,8 +203,8 @@ Create a `.mcp.json` file in your project root:
 {
   "mcpServers": {
     "lightspeed": {
-      "command": "node",
-      "args": ["./path/to/lightspeed-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
         "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
@@ -204,8 +250,8 @@ Cursor supports MCP servers through JSON configuration files.
 {
   "mcpServers": {
     "lightspeed": {
-      "command": "node",
-      "args": ["/absolute/path/to/lightspeed-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
         "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
@@ -249,9 +295,10 @@ version: 0.0.1
 schema: v1
 mcpServers:
   - name: lightspeed
-    command: node
+    command: npx
     args:
-      - /absolute/path/to/lightspeed-mcp-server/dist/index.js
+      - -y
+      - lightspeed-xseries-mcp
     env:
       LIGHTSPEED_DOMAIN_PREFIX: your-store
       LIGHTSPEED_ACCESS_TOKEN: lsxs_pt_your_token_here
@@ -265,8 +312,8 @@ Create `.continue/mcpServers/lightspeed.json`:
 {
   "mcpServers": {
     "lightspeed": {
-      "command": "node",
-      "args": ["/absolute/path/to/lightspeed-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
         "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
@@ -304,8 +351,8 @@ brew install gemini-cli
 {
   "mcpServers": {
     "lightspeed": {
-      "command": "node",
-      "args": ["/absolute/path/to/lightspeed-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
         "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
@@ -332,8 +379,8 @@ brew install gemini-cli
 {
   "mcpServers": {
     "lightspeed": {
-      "command": "node",
-      "args": ["/path/to/lightspeed-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "$LS_DOMAIN",
         "LIGHTSPEED_ACCESS_TOKEN": "$LS_TOKEN"
@@ -485,8 +532,9 @@ The assistant should be able to fetch data from your Lightspeed account.
 ### Common Issues
 
 **"Connection closed" or "Server not responding"**
-- Ensure the path to `dist/index.js` is absolute, not relative
-- Verify Node.js is installed and accessible
+- Verify Node.js v18+ is installed and accessible (`node --version`)
+- If using npx, ensure npm is working correctly (`npx --version`)
+- If using local build, ensure the path to `dist/index.js` is absolute, not relative
 - Check that the server builds successfully with `npm run build`
 
 **"Authentication failed"**
@@ -498,7 +546,7 @@ The assistant should be able to fetch data from your Lightspeed account.
 - Use `cmd /c` wrapper for npx commands:
   ```json
   "command": "cmd",
-  "args": ["/c", "node", "path/to/dist/index.js"]
+  "args": ["/c", "npx", "-y", "lightspeed-xseries-mcp"]
   ```
 
 **Tools not appearing**
@@ -510,7 +558,7 @@ The assistant should be able to fetch data from your Lightspeed account.
 
 - Check the [main README](../README.md) for API documentation
 - Review tool-specific documentation linked in each section
-- Open an issue on the [GitHub repository](https://github.com/your-org/lightspeed-mcp-server/issues)
+- Open an issue on the [GitHub repository](https://github.com/lightspeed-skhattane/lightspeed-xseries-mcp/issues)
 
 ---
 

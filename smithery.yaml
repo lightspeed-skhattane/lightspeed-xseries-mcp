@@ -1,0 +1,26 @@
+# Smithery configuration for Lightspeed X-Series MCP Server
+# https://smithery.ai/docs/config
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      LIGHTSPEED_DOMAIN_PREFIX:
+        type: string
+        description: "Your Lightspeed store domain prefix (e.g., 'mystore' from mystore.vendhq.com)"
+      LIGHTSPEED_ACCESS_TOKEN:
+        type: string
+        description: "Your Lightspeed API access token"
+    required:
+      - LIGHTSPEED_DOMAIN_PREFIX
+      - LIGHTSPEED_ACCESS_TOKEN
+  commandFunction: |-
+    (config) => ({
+      command: 'npx',
+      args: ['-y', 'lightspeed-xseries-mcp'],
+      env: {
+        LIGHTSPEED_DOMAIN_PREFIX: config.LIGHTSPEED_DOMAIN_PREFIX,
+        LIGHTSPEED_ACCESS_TOKEN: config.LIGHTSPEED_ACCESS_TOKEN
+      }
+    })

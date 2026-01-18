@@ -2,9 +2,67 @@
 
 A comprehensive Model Context Protocol (MCP) server for the Lightspeed Retail (X-Series) API. This server provides full coverage of the Lightspeed API, enabling AI assistants to interact with your Lightspeed retail data.
 
-## Getting Started
+## Installation
 
-See the **[Getting Started Guide](./docs/getting-started.md)** for complete installation and setup instructions.
+### Option 1: NPM (Recommended)
+
+The easiest way to use this MCP server:
+
+```bash
+npx lightspeed-xseries-mcp
+```
+
+Or install globally:
+
+```bash
+npm install -g lightspeed-xseries-mcp
+lightspeed-xseries-mcp
+```
+
+### Option 2: Smithery
+
+Install directly from [Smithery](https://smithery.ai):
+
+1. Go to [smithery.ai](https://smithery.ai)
+2. Search for "lightspeed-xseries-mcp"
+3. Click "Install" and follow the prompts
+
+### Option 3: From Source
+
+```bash
+git clone https://github.com/lightspeed-skhattane/lightspeed-xseries-mcp.git
+cd lightspeed-xseries-mcp
+npm install
+npm run build
+```
+
+## Quick Setup
+
+### Claude Desktop
+
+Add to your `claude_desktop_config.json`:
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "lightspeed": {
+      "command": "npx",
+      "args": ["-y", "lightspeed-xseries-mcp"],
+      "env": {
+        "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
+        "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
+      }
+    }
+  }
+}
+```
+
+### Other Tools
+
+See the **[Getting Started Guide](./docs/getting-started.md)** for complete setup instructions for all supported tools.
 
 **Supported AI tools:**
 - Claude Desktop / Claude Code

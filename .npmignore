@@ -1,0 +1,29 @@
+# Source files (dist is included via "files" in package.json)
+src/
+tsconfig.json
+
+# Development
+node_modules/
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test
+coverage/
+*.test.ts
+*.spec.ts
+
+# Misc
+.DS_Store
+.env
+.env.*
+smithery.yaml
