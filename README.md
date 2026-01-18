@@ -2,40 +2,13 @@
 
 A comprehensive Model Context Protocol (MCP) server for the Lightspeed Retail (X-Series) API. This server provides full coverage of the Lightspeed API, enabling AI assistants to interact with your Lightspeed retail data.
 
-## Installation
-
-### Option 1: NPM (Recommended)
-
-The easiest way to use this MCP server:
+## Quick Start
 
 ```bash
 npx lightspeed-xseries-mcp
 ```
 
-Or install globally:
-
-```bash
-npm install -g lightspeed-xseries-mcp
-lightspeed-xseries-mcp
-```
-
-### Option 2: From Source
-
-```bash
-git clone https://github.com/lightspeed-skhattane/lightspeed-xseries-mcp.git
-cd lightspeed-xseries-mcp
-npm install
-npm run build
-```
-
-## Quick Setup
-
-### Claude Desktop
-
-Add to your `claude_desktop_config.json`:
-
-**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+Then configure your AI tool. Example for Claude Desktop (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 ```json
 {
@@ -52,17 +25,7 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-### Other Tools
-
-See the **[Getting Started Guide](./docs/getting-started.md)** for complete setup instructions for all supported tools.
-
-**Supported AI tools:**
-- Claude Desktop / Claude Code
-- Cursor
-- VS Code (Continue.dev)
-- Gemini CLI
-- ChatGPT (Developer Mode)
-- Grok (xAI)
+**[Getting Started Guide](./docs/getting-started.md)** — Full setup instructions for Claude Desktop, Claude Code, Cursor, VS Code, Gemini CLI, ChatGPT, and Grok.
 
 ## Features
 
