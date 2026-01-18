@@ -133,11 +133,10 @@ Claude Code can configure MCP servers via CLI commands or configuration files.
 
 ```bash
 # Add the server globally (available in all projects)
-claude mcp add lightspeed --scope user -- npx -y lightspeed-xseries-mcp
-
-# Set environment variables
-export LIGHTSPEED_DOMAIN_PREFIX="your-store"
-export LIGHTSPEED_ACCESS_TOKEN="lsxs_pt_your_token_here"
+claude mcp add lightspeed --scope user \
+  -e LIGHTSPEED_DOMAIN_PREFIX=your-store \
+  -e LIGHTSPEED_ACCESS_TOKEN=lsxs_pt_your_token \
+  -- npx -y lightspeed-xseries-mcp
 ```
 
 **Method 2: Configuration File**

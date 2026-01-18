@@ -7,7 +7,7 @@ A comprehensive Model Context Protocol (MCP) server for the Lightspeed Retail (X
 ### Claude Code
 
 ```bash
-claude mcp add lightspeed \
+claude mcp add lightspeed --scope user \
   -e LIGHTSPEED_DOMAIN_PREFIX=your-store \
   -e LIGHTSPEED_ACCESS_TOKEN=lsxs_pt_your_token \
   -- npx -y lightspeed-xseries-mcp
