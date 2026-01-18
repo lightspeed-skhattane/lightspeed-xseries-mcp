@@ -4,11 +4,18 @@ A comprehensive Model Context Protocol (MCP) server for the Lightspeed Retail (X
 
 ## Quick Start
 
+### Claude Code
+
 ```bash
-npx lightspeed-xseries-mcp
+claude mcp add lightspeed \
+  -e LIGHTSPEED_DOMAIN_PREFIX=your-store \
+  -e LIGHTSPEED_ACCESS_TOKEN=lsxs_pt_your_token \
+  -- npx -y lightspeed-xseries-mcp
 ```
 
-Then configure your AI tool. Example for Claude Desktop (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+### Claude Desktop
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
 
 ```json
 {
@@ -25,7 +32,7 @@ Then configure your AI tool. Example for Claude Desktop (`~/Library/Application 
 }
 ```
 
-**[Getting Started Guide](./docs/getting-started.md)** — Full setup instructions for Claude Desktop, Claude Code, Cursor, VS Code, Gemini CLI, ChatGPT, and Grok.
+**[Getting Started Guide](./docs/getting-started.md)** — Setup instructions for Cursor, VS Code, Gemini CLI, ChatGPT, Grok, and more.
 
 ## Features
 

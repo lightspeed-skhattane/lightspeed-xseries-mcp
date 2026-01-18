@@ -32,19 +32,16 @@ Before you begin, ensure you have:
 
 ## Installation
 
-### Option 1: NPM (Recommended)
+The MCP server is available on NPM. Your AI tool will automatically download and run it when configured.
 
-The easiest way to install - no manual setup required:
+For development or customization, you can also install from source:
 
 ```bash
-# Use directly with npx (no installation needed)
-npx lightspeed-xseries-mcp
-
-# Or install globally
-npm install -g lightspeed-xseries-mcp
+git clone https://github.com/lightspeed-skhattane/lightspeed-xseries-mcp.git
+cd lightspeed-xseries-mcp
+npm install
+npm run build
 ```
-
-### Option 2: From Source
 
 For development or customization:
 
@@ -60,7 +57,6 @@ npm install
 npm run build
 ```
 
-After building, note the path to `dist/index.js` - you'll need this for configuration.
 
 ## Getting Lightspeed API Credentials
 
@@ -103,31 +99,12 @@ Claude Desktop supports MCP servers natively through a configuration file.
 3. Click **Edit Config**
 4. Add the following configuration:
 
-**Using NPM (Recommended):**
-
 ```json
 {
   "mcpServers": {
     "lightspeed": {
       "command": "npx",
       "args": ["-y", "lightspeed-xseries-mcp"],
-      "env": {
-        "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
-        "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
-      }
-    }
-  }
-}
-```
-
-**Using local build (from source):**
-
-```json
-{
-  "mcpServers": {
-    "lightspeed": {
-      "command": "node",
-      "args": ["/absolute/path/to/lightspeed-xseries-mcp/dist/index.js"],
       "env": {
         "LIGHTSPEED_DOMAIN_PREFIX": "your-store",
         "LIGHTSPEED_ACCESS_TOKEN": "lsxs_pt_your_token_here"
