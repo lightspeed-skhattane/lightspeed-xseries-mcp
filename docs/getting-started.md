@@ -44,16 +44,7 @@ npx lightspeed-xseries-mcp
 npm install -g lightspeed-xseries-mcp
 ```
 
-### Option 2: Smithery
-
-Install with one click from [Smithery](https://smithery.ai):
-
-1. Go to [smithery.ai](https://smithery.ai)
-2. Search for **"lightspeed-xseries-mcp"**
-3. Click **"Install"** and follow the prompts
-4. Smithery will automatically configure your AI tool
-
-### Option 3: From Source
+### Option 2: From Source
 
 For development or customization:
 
@@ -148,10 +139,6 @@ Claude Desktop supports MCP servers natively through a configuration file.
 
 5. Save the file and **restart Claude Desktop completely**
 6. Look for the **hammer/tools icon** in the bottom-right corner to confirm the server is connected
-
-**Alternative: Smithery**
-
-You can also install via [Smithery](https://smithery.ai) for automatic configuration.
 
 **Alternative: Desktop Extensions (.mcpb)**
 

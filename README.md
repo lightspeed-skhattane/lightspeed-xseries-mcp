@@ -19,15 +19,7 @@ npm install -g lightspeed-xseries-mcp
 lightspeed-xseries-mcp
 ```
 
-### Option 2: Smithery
-
-Install directly from [Smithery](https://smithery.ai):
-
-1. Go to [smithery.ai](https://smithery.ai)
-2. Search for "lightspeed-xseries-mcp"
-3. Click "Install" and follow the prompts
-
-### Option 3: From Source
+### Option 2: From Source
 
 ```bash
 git clone https://github.com/lightspeed-skhattane/lightspeed-xseries-mcp.git
